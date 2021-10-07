@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/App';
+import {App} from './components/App/App';
 import reportWebVitals from './reportWebVitals';
 import './vendor/normalize.css';
 import './shared/styles/palette.css';

@@ -1,6 +1,7 @@
 .app {
   display: flex;
   width: 100%;
+  min-width: 460px;
   min-height: 100vh;
   align-items: flex-start;
   justify-content: center;
@@ -9,10 +10,11 @@
 
 .container {
   display: grid;
-  width: clamp(441px, 80%, 600px);
+  width: clamp(440px, 80%, 660px);
   padding-top: 15%;
   grid-template-columns: 100%;
   grid-template-rows: max-content;
+  row-gap: 20px;
 }
 
 .title {
@@ -20,7 +22,8 @@
   margin: 0;
   color: var(--white);
   font-family: 'Inter', 'Arial', sans-serif;
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: normal;
   line-height: 30px;
   text-align: center;
 }
