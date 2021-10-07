@@ -1,0 +1,12 @@
+.input {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.input::placeholder {
+  font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.primary {
+ padding: 5px;
+}

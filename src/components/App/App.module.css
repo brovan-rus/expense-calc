@@ -10,7 +10,7 @@
 
 .container {
   display: grid;
-  width: clamp(440px, 80%, 660px);
+  width: clamp(440px, 80%, 900px);
   padding-top: 15%;
   grid-template-columns: 100%;
   grid-template-rows: max-content;

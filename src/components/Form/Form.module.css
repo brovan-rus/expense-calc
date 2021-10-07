@@ -1,0 +1,7 @@
+.form {
+  display: grid;
+  width: 100%;
+  column-gap: 15px;
+  grid-template-columns: repeat(2, 40%) 12%;
+  grid-template-rows: 100%;
+}
