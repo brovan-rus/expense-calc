@@ -1,0 +1,27 @@
+.button {
+  width: 100%;
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  font-family: 'Inter', 'Arial', sans-serif;
+  outline: 0;
+  transition: all .3s ease-in;
+}
+
+.button:disabled {
+  background-color: var(--gray);
+  cursor: inherit;
+}
+
+.button:hover {
+  opacity: .8;
+}
+
+
+.green {
+  background-color: var(--green);
+}
+
+.red {
+  background-color: var(--red);
+}

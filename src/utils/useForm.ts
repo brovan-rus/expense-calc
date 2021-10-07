@@ -2,7 +2,10 @@ import { useCallback, useState, FocusEvent, ChangeEvent } from 'react';
 import { formValidationErrorMessage } from './constants';
 
 function useForm() {
-  const [values, setValues] = useState({});
+  interface IValues {
+    [index: string]: string;
+  }
+  const [values, setValues] = useState<IValues>({});
   const [errors, setErrors] = useState({});
   const [isValidationStarted, setIsValidationStarted] = useState({});
   const [isValid, setIsValid] = useState(false);
@@ -14,7 +17,7 @@ function useForm() {
     setIsValidationStarted({ ...isValidationStarted, [name]: true });
   };
 
-  const handleChange = (event: ChangeEvent<HTMLFormElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const target = event.target;
     const name = target.name;
     const value = target.value;
@@ -22,11 +25,12 @@ function useForm() {
     setErrors({ ...errors, [name]: target.validationMessage });
     const form = target.closest('form');
     form === null ? setIsValid(false) : setIsValid(form.checkValidity());
-    if (name === 'price' && !target.validationMessage) {
+    const digitsAfterPoint = value.includes('.') ? value.split('.')[1].length : 0;
+    if (name === 'productPrice' && !target.validationMessage && !(digitsAfterPoint < 3)) {
       setErrors({ ...errors, [name]: formValidationErrorMessage });
       setIsValid(false);
     }
-    if (name === 'name' && !value.match(nameRegEx)) {
+    if (name === 'productName' && !value.match(nameRegEx)) {
       setErrors({ ...errors, [name]: formValidationErrorMessage });
       setIsValid(false);
     }
@@ -53,4 +57,4 @@ function useForm() {
   };
 }
 
-export default useForm;
+export { useForm };
