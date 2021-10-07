@@ -1,19 +1,38 @@
-import {FC} from 'react';
+import { FC, useState, useEffect } from 'react';
 import cn from 'classnames/bind';
 
-import {Container} from "../Container";
-import {Form} from "../Form";
+import localStorageHandler from '../../utils/LocalStorageHandler';
+import { Container } from '../Container';
+import { Form } from '../Form';
 import styles from './App.module.css';
 
 const cx = cn.bind(styles);
 export const App: FC = () => {
+  interface IItem {
+    [key: string]: string;
+  }
+  const [itemsList, setItemsList] = useState<IItem[]>([]);
+
+  const handleAddItem = (formValues: { [index: string]: string }) => {
+    const newItem: IItem = { [formValues.itemName]: formValues.itemPrice };
+    const newItemsList = [...itemsList, newItem];
+    setItemsList(newItemsList);
+    localStorageHandler.saveToLocalStorage('itemList', newItemsList);
+  };
+
+  useEffect(() => {
+    setItemsList(localStorageHandler.getFromLocalStorage('itemList'));
+  }, []);
+
   return (
     <div className={cx('app')}>
       <div className={cx('container')}>
         <h1 className={cx('title')}>Калькулятор расходов</h1>
-        <Container><Form /></Container>
+        <Container>
+          <Form handleSubmit={handleAddItem} />
+        </Container>
+        {itemsList.length > 0 && <Container></Container>}
       </div>
     </div>
   );
-}
-
+};
