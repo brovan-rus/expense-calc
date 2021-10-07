@@ -1,0 +1,1 @@
+export const formValidationErrorMessage = 'Проверьте правильность заполнения поля';
