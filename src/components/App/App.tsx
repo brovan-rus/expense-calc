@@ -42,6 +42,10 @@ export const App: FC = () => {
     });
   };
 
+  const handleDeleteItem = (i: number) => {
+    setItemsList((state) => state.filter((item, index) => i !== index));
+  };
+
   useEffect(() => {
     localStorageHandler.saveToLocalStorage('itemList', itemsList);
   }, [itemsList]);
@@ -55,7 +59,11 @@ export const App: FC = () => {
         </Container>
         {itemsList.length > 0 && (
           <Container>
-            <List itemsList={itemsList} onChangeList={handleChangeList} />
+            <List
+              itemsList={itemsList}
+              onChangeList={handleChangeList}
+              onItemDelete={handleDeleteItem}
+            />
           </Container>
         )}
       </div>

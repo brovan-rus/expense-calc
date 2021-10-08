@@ -17,9 +17,10 @@ export interface IChange {
 interface IList {
   itemsList: IItem[];
   onChangeList: (changes: IChange[]) => void;
+  onItemDelete: (i: number) => void;
 }
 
-export const List: FC<IList> = ({ itemsList, onChangeList }) => {
+export const List: FC<IList> = ({ itemsList, onChangeList, onItemDelete }) => {
   const form = useForm();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -34,6 +35,10 @@ export const List: FC<IList> = ({ itemsList, onChangeList }) => {
     });
     onChangeList(changes);
     form.resetForm();
+  };
+
+  const handleDelete = (i: number) => {
+    onItemDelete(i);
   };
 
   return (
@@ -63,7 +68,7 @@ export const List: FC<IList> = ({ itemsList, onChangeList }) => {
             <Button color={'green'} type="submit">
               Редактировать
             </Button>
-            <Button color={'red'} type="button">
+            <Button color={'red'} type="button" onClick={() => handleDelete(i)}>
               Удалить
             </Button>
           </form>
