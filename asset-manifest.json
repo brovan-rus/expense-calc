@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/expense-calc/static/css/main.8b086285.chunk.css",
-    "main.js": "/expense-calc/static/js/main.22d181d8.chunk.js",
-    "main.js.map": "/expense-calc/static/js/main.22d181d8.chunk.js.map",
+    "main.js": "/expense-calc/static/js/main.fdd3d03e.chunk.js",
+    "main.js.map": "/expense-calc/static/js/main.fdd3d03e.chunk.js.map",
     "runtime-main.js": "/expense-calc/static/js/runtime-main.9335cd12.js",
     "runtime-main.js.map": "/expense-calc/static/js/runtime-main.9335cd12.js.map",
     "static/js/2.e1476ae4.chunk.js": "/expense-calc/static/js/2.e1476ae4.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.9335cd12.js",
     "static/js/2.e1476ae4.chunk.js",
     "static/css/main.8b086285.chunk.css",
-    "static/js/main.22d181d8.chunk.js"
+    "static/js/main.fdd3d03e.chunk.js"
   ]
 }
