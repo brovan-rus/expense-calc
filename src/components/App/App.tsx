@@ -55,6 +55,10 @@ export const App: FC = () => {
     return sum.toFixed(2);
   };
 
+  const handleClearList = () => {
+    setItemsList([]);
+  };
+
   useEffect(() => {
     localStorageHandler.saveToLocalStorage('itemList', itemsList);
   }, [itemsList]);
@@ -77,7 +81,7 @@ export const App: FC = () => {
         )}
         {itemsList.length > 0 && (
           <Container>
-            <Result total={calculateSum()} />
+            <Result total={calculateSum()} handleClearList={handleClearList} />
           </Container>
         )}
       </div>
