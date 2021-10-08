@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: minmax(300px, 400px) 200px;
+}
+
+.text {
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  line-height: 36px;
+}

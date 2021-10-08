@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, useCallback } from 'react';
+import { FC, useState, useEffect } from 'react';
 import cn from 'classnames/bind';
 
 import localStorageHandler from '../../utils/LocalStorageHandler';
@@ -7,6 +7,7 @@ import { Form } from '../Form';
 import { List } from '../List';
 import styles from './App.module.css';
 import { IChange } from '../List';
+import { Result } from '../Result/';
 
 const cx = cn.bind(styles);
 
@@ -46,6 +47,14 @@ export const App: FC = () => {
     setItemsList((state) => state.filter((item, index) => i !== index));
   };
 
+  const calculateSum = () => {
+    let sum = 0;
+    itemsList.forEach((item) => {
+      sum += parseFloat(Object.values(item).toString());
+    });
+    return sum.toFixed(2);
+  };
+
   useEffect(() => {
     localStorageHandler.saveToLocalStorage('itemList', itemsList);
   }, [itemsList]);
@@ -64,6 +73,11 @@ export const App: FC = () => {
               onChangeList={handleChangeList}
               onItemDelete={handleDeleteItem}
             />
+          </Container>
+        )}
+        {itemsList.length > 0 && (
+          <Container>
+            <Result total={calculateSum()} />
           </Container>
         )}
       </div>
