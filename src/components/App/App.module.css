@@ -3,8 +3,10 @@
   width: 100%;
   min-width: 460px;
   min-height: 100vh;
+  box-sizing: border-box;
   align-items: flex-start;
   justify-content: center;
+  padding: 20px 0;
   background-color: var(--black);
 }
 

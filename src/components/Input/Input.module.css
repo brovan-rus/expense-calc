@@ -18,6 +18,11 @@
   font-weight: 600;
 }
 
+.secondary::placeholder {
+  color: var(--black);
+  font-weight: 600;
+}
+
 .right {
   position: relative;
   text-align: right;
