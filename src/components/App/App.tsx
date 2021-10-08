@@ -24,7 +24,6 @@ export const App: FC = () => {
     const newItem: IItem = { [formValues.itemName]: formValues.itemPrice };
     const newItemsList = [...itemsList, newItem];
     setItemsList(newItemsList);
-    localStorageHandler.saveToLocalStorage('itemList', newItemsList);
   };
 
   const handleChangeList = (changes: IChange[]) => {
