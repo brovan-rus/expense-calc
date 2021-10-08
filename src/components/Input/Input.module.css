@@ -23,6 +23,10 @@
   font-weight: 600;
 }
 
+.secondary:focus::placeholder {
+  color: transparent;
+}
+
 .right {
   position: relative;
   text-align: right;
