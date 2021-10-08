@@ -3,6 +3,6 @@
   width: 100%;
   justify-content: center;
   column-gap: 15px;
-  grid-template-columns: repeat(2, 40%) 12%;
-  grid-template-rows: 100%;
+  grid-template-columns: repeat(2, 40%) minmax(max-content, 12%);
+  grid-template-rows: max-content;
 }

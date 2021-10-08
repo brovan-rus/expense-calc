@@ -1,12 +1,24 @@
 .input {
   box-sizing: border-box;
   padding: 5px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 13px;
 }
 
-.input::placeholder {
-  font-family: 'Inter', 'Arial', sans-serif;
+.input:focus {
+  outline: 0;
 }
 
 .primary {
  padding: 5px;
+}
+
+.secondary {
+  border: 0;
+  font-weight: 600;
+}
+
+.right {
+  position: relative;
+  text-align: right;
 }

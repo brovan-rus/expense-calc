@@ -17,6 +17,7 @@ export const Form: FC<IForm> = ({ handleSubmit }) => {
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     handleSubmit(form.values);
+    form.resetForm();
   };
 
   return (

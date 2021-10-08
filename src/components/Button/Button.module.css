@@ -1,9 +1,13 @@
 .button {
   width: 100%;
+  box-sizing: border-box;
+  padding: 10px 13px;
   border: 0;
+  border-radius: 3px;
   color: var(--white);
   cursor: pointer;
   font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 14px;
   outline: 0;
   transition: all .3s ease-in;
 }
@@ -11,6 +15,10 @@
 .button:disabled {
   background-color: var(--gray);
   cursor: inherit;
+}
+
+.button:disabled:hover {
+  opacity: 1;
 }
 
 .button:hover {

@@ -4,13 +4,15 @@ import cn from 'classnames/bind';
 import localStorageHandler from '../../utils/LocalStorageHandler';
 import { Container } from '../Container';
 import { Form } from '../Form';
+import { List } from '../List';
 import styles from './App.module.css';
 
 const cx = cn.bind(styles);
+export interface IItem {
+  [key: string]: string;
+}
+
 export const App: FC = () => {
-  interface IItem {
-    [key: string]: string;
-  }
   const [itemsList, setItemsList] = useState<IItem[]>([]);
 
   const handleAddItem = (formValues: { [index: string]: string }) => {
@@ -31,7 +33,11 @@ export const App: FC = () => {
         <Container>
           <Form handleSubmit={handleAddItem} />
         </Container>
-        {itemsList.length > 0 && <Container></Container>}
+        {itemsList.length > 0 && (
+          <Container>
+            <List itemsList={itemsList} />
+          </Container>
+        )}
       </div>
     </div>
   );

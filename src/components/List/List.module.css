@@ -1,0 +1,36 @@
+.element {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--black);
+  list-style-type: none;
+}
+
+.element:last-of-type {
+  border: none;
+}
+
+.list {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  row-gap: 15px;
+}
+
+.form {
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  column-gap: 15px;
+  grid-template-columns: repeat(2, 30%) repeat(2, max-content);
+  grid-template-rows: 100%;
+}
+
+.priceContainer {
+  display: flex;
+}
+
+.currency {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 36px;
+}

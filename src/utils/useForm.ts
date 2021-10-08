@@ -1,11 +1,9 @@
 import { useCallback, useState, FocusEvent, ChangeEvent } from 'react';
 import { formValidationErrorMessage } from './constants';
+import { IItem } from '../components/App';
 
 function useForm() {
-  interface IValues {
-    [index: string]: string;
-  }
-  const [values, setValues] = useState<IValues>({});
+  const [values, setValues] = useState<IItem>({});
   const [errors, setErrors] = useState({});
   const [isValidationStarted, setIsValidationStarted] = useState({});
   const [isValid, setIsValid] = useState(false);
