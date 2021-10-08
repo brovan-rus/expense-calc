@@ -23,8 +23,7 @@ export const App: FC = () => {
 
   const handleAddItem = (formValues: { [index: string]: string }) => {
     const newItem: IItem = { [formValues.itemName]: formValues.itemPrice };
-    const newItemsList = [...itemsList, newItem];
-    setItemsList(newItemsList);
+    setItemsList([...itemsList, newItem]);
   };
 
   const handleChangeList = (changes: IChange[]) => {
